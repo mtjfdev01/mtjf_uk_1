@@ -4,82 +4,58 @@ import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
 import NewsletterSection from '../components/NewsletterSection'
 
-const volunteerRoles = [
+const volunteerAreas = [
   {
-    icon: '📋',
-    title: 'Community Coordinator',
-    commitment: '1 day/week',
-    location: 'Various UK locations',
-    description: 'Help organise and facilitate our community programmes, supporting frontline staff and engaging local residents.',
+    icon: '📣',
+    title: 'Community Outreach',
+    commitment: 'Flexible',
+    location: 'Local to you',
+    description: 'Help us connect with communities — attending local events, having conversations, and letting people know MTJF exists.',
   },
   {
     icon: '💻',
-    title: 'Digital Skills Mentor',
-    commitment: '2–3 hrs/week',
-    location: 'Remote or in-person',
-    description: 'Share your digital knowledge with individuals looking to build essential technology skills for work and everyday life.',
+    title: 'Digital & Social Media',
+    commitment: 'A few hours/week',
+    location: 'Remote',
+    description: 'We need help building our online presence — creating content, managing social channels, and growing our audience from zero.',
   },
   {
-    icon: '📣',
-    title: 'Fundraising Champion',
-    commitment: 'Flexible',
-    location: 'Your local area',
-    description: 'Help us raise vital funds by organising local events, sponsored challenges, or simply spreading the word.',
-  },
-  {
-    icon: '🖊️',
-    title: 'Grant Writer',
+    icon: '✍️',
+    title: 'Writing & Communications',
     commitment: 'Project-based',
     location: 'Remote',
-    description: 'Use your writing skills to help us secure grant funding that keeps our programmes running and expanding.',
+    description: 'If you are a confident writer, we need help with newsletters, website content, grant applications, and other written materials.',
   },
   {
     icon: '🎨',
-    title: 'Creative & Communications',
+    title: 'Design & Creativity',
     commitment: 'Project-based',
     location: 'Remote',
-    description: 'Designers, photographers, and storytellers — help us communicate our impact and reach more supporters.',
+    description: 'Graphic designers, illustrators, video editors — help us look and sound credible as a new organisation without a big budget.',
+  },
+  {
+    icon: '📋',
+    title: 'Administration & Operations',
+    commitment: 'Flexible',
+    location: 'Remote or in-person',
+    description: 'Charities run on behind-the-scenes work. If you are organised and reliable, we have a place for you in our team.',
   },
   {
     icon: '🏢',
-    title: 'Trustee',
-    commitment: '4–6 meetings/year',
-    location: 'London (hybrid)',
-    description: 'Join our Board and help provide strategic oversight and governance for the organisation. Legal, finance, or sector expertise welcome.',
-  },
-]
-
-const corporateOptions = [
-  {
-    title: 'Payroll Giving',
-    description: 'The easiest way for employees to donate tax-efficiently, straight from their salary. We handle the admin.',
-    icon: '💳',
-  },
-  {
-    title: 'Match Funding',
-    description: 'Double the impact of your employees\' charitable giving by matching their donations pound for pound.',
-    icon: '✖️2',
-  },
-  {
-    title: 'Team Volunteering',
-    description: 'Bring your team together for a day of meaningful volunteering. We\'ll tailor the experience to your team\'s skills.',
-    icon: '👥',
-  },
-  {
-    title: 'Strategic Partnership',
-    description: 'For longer-term, deeper engagement. Co-develop projects, share expertise, and align your CSR with lasting impact.',
-    icon: '🤝',
+    title: 'Trustee / Governance',
+    commitment: 'Approx. 4–6 meetings/year',
+    location: 'UK (hybrid)',
+    description: 'We are looking for founding trustees to help govern MTJF responsibly. Legal, financial, or charity sector experience is welcome.',
   },
 ]
 
 export default function GetInvolved() {
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', role: '', message: '',
+    name: '', email: '', phone: '', area: '', message: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value })
-
   const handleSubmit = e => {
     e.preventDefault()
     setSubmitted(true)
@@ -89,11 +65,11 @@ export default function GetInvolved() {
     <>
       <PageHero
         label="Get Involved"
-        title="Join the Movement"
-        subtitle="There are many ways to make a difference with Hopefield Trust — whatever your time, skills, or resources, we have an opportunity for you."
+        title="We Need You — Genuinely"
+        subtitle="As a brand new organisation, every volunteer, every donor, and every supporter counts. There is no small contribution at this stage. Join us and help build MTJF from the ground up."
       />
 
-      {/* Ways to Get Involved */}
+      {/* Three ways */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -101,30 +77,33 @@ export default function GetInvolved() {
               {
                 icon: '🙋',
                 title: 'Volunteer',
-                description: 'Give your time and skills to support our work directly in communities across the UK.',
-                cta: 'See Opportunities',
+                description: 'Give your time and skills. As a new organisation, volunteers are essential — not optional. Every role matters right now.',
+                cta: 'See Roles',
                 href: '#volunteer',
-                color: 'bg-blue-50 border-navy',
+                border: 'border-navy',
+                bg: 'bg-blue-50',
               },
               {
                 icon: '💷',
                 title: 'Donate',
-                description: 'Make a one-off or regular donation that directly funds our life-changing programmes.',
+                description: 'Your donation at this early stage directly funds our ability to set up, reach communities, and launch our first programmes.',
                 cta: 'Donate Now',
                 href: '/donate',
-                color: 'bg-orange-50 border-accent',
+                border: 'border-accent',
+                bg: 'bg-orange-50',
                 highlight: true,
               },
               {
-                icon: '🏢',
-                title: 'Partner With Us',
-                description: 'Engage your business, school, or organisation in meaningful corporate partnership.',
-                cta: 'Partner With Us',
-                href: '#corporate',
-                color: 'bg-green-50 border-green-600',
+                icon: '📢',
+                title: 'Spread the Word',
+                description: 'You do not need money or skills to help — just tell people about us. Share our page, mention us to friends. Awareness is everything at this stage.',
+                cta: 'Get in Touch',
+                href: '/contact',
+                border: 'border-green-600',
+                bg: 'bg-green-50',
               },
             ].map(item => (
-              <div key={item.title} className={`rounded-2xl border-2 ${item.color} p-8 text-center flex flex-col items-center`}>
+              <div key={item.title} className={`rounded-2xl border-2 ${item.border} ${item.bg} p-8 text-center flex flex-col items-center`}>
                 <div className="text-5xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-navy mb-3">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{item.description}</p>
@@ -148,119 +127,128 @@ export default function GetInvolved() {
         <div className="container-custom">
           <SectionHeading
             label="Volunteer"
-            title="Current Volunteer Opportunities"
-            subtitle="We have roles to suit every schedule and skill set. All volunteers receive full induction, ongoing support, and a reference letter upon request."
+            title="Volunteer Roles We're Looking to Fill"
+            subtitle="These are the areas where we most need help right now. All roles are unpaid and flexible. Full support will be provided — we are building this together."
             center
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {volunteerRoles.map(role => (
+            {volunteerAreas.map(role => (
               <div key={role.title} className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-200 flex flex-col">
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
                   <span className="text-2xl">{role.icon}</span>
                 </div>
-                <h3 className="font-bold text-navy mb-1">{role.title}</h3>
+                <h3 className="font-bold text-navy mb-2">{role.title}</h3>
                 <div className="flex flex-wrap gap-2 mb-3">
                   <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{role.commitment}</span>
                   <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{role.location}</span>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed flex-grow">{role.description}</p>
-                <button className="mt-4 text-navy font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all duration-200">
-                  Apply for This Role
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
               </div>
             ))}
           </div>
+          <p className="text-center text-gray-400 text-sm mt-8">
+            Don't see your skill listed? We are open to all offers of help. Tell us what you can do.
+          </p>
         </div>
       </section>
 
-      {/* Fundraise Section */}
+      {/* Fundraise */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeading
                 label="Fundraise"
-                title="Fundraise for Hopefield"
+                title="Fundraise on Our Behalf"
               />
-              <p className="text-gray-600 mt-4 mb-6 leading-relaxed">
-                Whether it's a sponsored run, a bake sale, a birthday donation, or a skydive —
-                any fundraising activity makes a real difference. We'll provide everything you need
-                to get started.
+              <p className="text-gray-600 mt-4 mb-5 leading-relaxed">
+                Whether you want to organise a fundraising event, run a sponsored challenge,
+                or simply collect donations from friends and family — we welcome it all.
+                At this stage, every fundraising effort is genuinely significant.
               </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  'Fundraising pack with tips and templates',
-                  'Personalised online fundraising page',
-                  'Gift Aid registration support',
-                  'Dedicated fundraising support contact',
-                  'Social media promotion of your effort',
-                ].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-gray-700 text-sm">
-                    <svg className="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                Get in touch and we will support you with everything we can — materials,
+                messaging, and our genuine gratitude.
+              </p>
               <Link to="/contact" className="btn-primary">Register Your Fundraiser</Link>
             </div>
             <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-3xl p-10 text-center">
               <span className="text-7xl">🏃</span>
-              <h3 className="text-navy font-bold text-xl mt-4 mb-2">Challenge Events</h3>
+              <h3 className="text-navy font-bold text-xl mt-4 mb-2">Any Fundraising Helps</h3>
               <p className="text-gray-600 text-sm mb-6">
-                We have charity places in major UK events including the London Marathon, Great North Run,
-                and more. Apply for your place today.
+                Sponsored walk. Bake sale. Birthday donation. Community quiz night.
+                Whatever you can organise — it all counts at this stage of our journey.
               </p>
-              <Link to="/contact" className="btn-accent">Apply for a Place</Link>
+              <Link to="/contact" className="btn-accent">Tell Us Your Idea</Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Corporate */}
-      <section id="corporate" className="section-padding bg-gray-50">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <SectionHeading
-            label="Corporate"
-            title="Partner with Hopefield"
-            subtitle="Align your business with values-driven, evidence-based work. Our corporate partnerships create real shared value — for your organisation and the communities we serve."
+            label="For Organisations"
+            title="Corporate & Institutional Support"
+            subtitle="If you represent a business, school, faith community, or other organisation that wants to support MTJF's launch, we want to hear from you."
             center
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {corporateOptions.map(opt => (
-              <div key={opt.title} className="bg-white rounded-2xl p-6 shadow-md text-center hover:shadow-lg transition-shadow duration-200">
-                <div className="text-3xl mb-3">{opt.icon}</div>
-                <h3 className="font-bold text-navy mb-2">{opt.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{opt.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 max-w-2xl mx-auto">
+            {[
+              {
+                icon: '💳',
+                title: 'Donate on Behalf of Your Organisation',
+                description: 'Corporate donations at this stage directly fund our ability to launch. We can provide acknowledgement and updates on how the funds are used.',
+              },
+              {
+                icon: '👥',
+                title: 'Team Volunteering',
+                description: 'Bring your team together to support MTJF\'s early work. We can shape a meaningful day that fits your team\'s skills and your CSR goals.',
+              },
+              {
+                icon: '🤝',
+                title: 'Become a Founding Partner',
+                description: 'Join us at the very beginning as an officially recognised founding partner. Help shape our direction and be part of our founding story.',
+              },
+              {
+                icon: '📢',
+                title: 'Spread the Word',
+                description: 'Share our launch with your network, newsletter, or social media. For a new charity, visibility is invaluable.',
+              },
+            ].map(item => (
+              <div key={item.title} className="bg-white rounded-2xl shadow-md p-6">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-bold text-navy mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link to="/contact" className="btn-primary">Discuss a Partnership</Link>
+            <Link to="/contact" className="btn-primary">Contact Us to Discuss</Link>
           </div>
         </div>
       </section>
 
-      {/* Volunteer Expression Form */}
+      {/* Expression of Interest Form */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-2xl mx-auto">
             <SectionHeading
-              label="Express Interest"
-              title="Ready to Get Involved?"
-              subtitle="Fill in this short form and a member of our team will be in touch within 48 hours to discuss how you can help."
+              label="Get Started"
+              title="Express Your Interest"
+              subtitle="Fill in this short form and we will be in touch as soon as we can. We respond to every message personally."
               center
             />
             <div className="mt-10 card shadow-lg">
               {submitted ? (
                 <div className="text-center py-10">
                   <div className="text-6xl mb-4">🎉</div>
-                  <h3 className="text-xl font-bold text-navy mb-2">Thank You!</h3>
-                  <p className="text-gray-600">We've received your expression of interest and will be in touch within 48 hours.</p>
+                  <h3 className="text-xl font-bold text-navy mb-2">Thank You So Much!</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We have received your message and a real person from our founding team will
+                    reply to you personally. Your support at this stage means a great deal to us.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -274,7 +262,7 @@ export default function GetInvolved() {
                         value={formData.name}
                         onChange={handleChange}
                         className="input-field"
-                        placeholder="Jane Smith"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -286,56 +274,57 @@ export default function GetInvolved() {
                         value={formData.email}
                         onChange={handleChange}
                         className="input-field"
-                        placeholder="jane@example.com"
+                        placeholder="you@example.com"
                       />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="label">Phone Number</label>
+                      <label className="label">Phone (optional)</label>
                       <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
                         className="input-field"
-                        placeholder="+44 7700 900000"
+                        placeholder="+44 7700 000000"
                       />
                     </div>
                     <div>
-                      <label className="label">I'm interested in *</label>
+                      <label className="label">How can you help? *</label>
                       <select
-                        name="role"
+                        name="area"
                         required
-                        value={formData.role}
+                        value={formData.area}
                         onChange={handleChange}
                         className="input-field"
                       >
-                        <option value="">Select an option</option>
+                        <option value="">Please select</option>
                         <option>Volunteering</option>
-                        <option>Corporate Partnership</option>
                         <option>Fundraising</option>
+                        <option>Corporate / Organisational Support</option>
                         <option>Trusteeship</option>
-                        <option>Other</option>
+                        <option>Spreading the Word</option>
+                        <option>Something Else</option>
                       </select>
                     </div>
                   </div>
                   <div>
-                    <label className="label">Tell us a bit about yourself</label>
+                    <label className="label">Tell us more (optional)</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
                       className="input-field resize-none"
-                      placeholder="Any relevant skills, experience, or availability..."
+                      placeholder="What skills or experience do you bring? Any questions for us?"
                     />
                   </div>
-                  <button type="submit" className="btn-accent w-full">
-                    Submit Expression of Interest
+                  <button type="submit" className="btn-accent w-full py-4">
+                    Submit — We'll Be in Touch
                   </button>
                   <p className="text-xs text-gray-400 text-center">
-                    By submitting, you agree to our Privacy Policy. We will not share your details with third parties.
+                    We will not share your details with anyone. By submitting you agree to our Privacy Policy.
                   </p>
                 </form>
               )}

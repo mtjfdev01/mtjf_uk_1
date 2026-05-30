@@ -1,48 +1,29 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
-import StatCard from '../components/StatCard'
 import NewsletterSection from '../components/NewsletterSection'
 
 const values = [
   {
-    icon: '🤝',
-    title: 'Community First',
-    description: 'Every decision we make starts with the people we serve. We listen deeply, act collaboratively, and put community needs at the heart of everything.',
-  },
-  {
-    icon: '🔍',
-    title: 'Transparency',
-    description: 'We publish our accounts, report on our impact, and welcome scrutiny. Our supporters deserve to know exactly how their contributions are used.',
+    icon: '🕊️',
+    title: 'Mercy',
+    description: 'We approach every person and every situation with compassion. Mercy is not weakness — it is the foundation from which true change begins.',
   },
   {
     icon: '⚖️',
-    title: 'Equity & Inclusion',
-    description: 'We are committed to reaching those who are most marginalised. We actively work to remove barriers and ensure no one is left behind.',
+    title: 'Justice',
+    description: 'Compassion without advocacy is incomplete. We are committed to challenging what is unfair and standing up for those who need a voice.',
   },
   {
-    icon: '🌱',
-    title: 'Sustainability',
-    description: 'We build for the long term. Our programmes are designed to create lasting change, not quick fixes, and to empower communities to thrive independently.',
+    icon: '🔍',
+    title: 'Honesty',
+    description: 'We will not pretend to be more than we are. We commit to full transparency — about our finances, our progress, and our limitations.',
   },
-]
-
-const team = [
-  { name: 'Dr. Sarah Williams', role: 'Chief Executive', initials: 'SW' },
-  { name: 'James Hartley', role: 'Director of Programmes', initials: 'JH' },
-  { name: 'Priya Nair', role: 'Director of Fundraising', initials: 'PN' },
-  { name: 'Tom Edwards', role: 'Director of Finance', initials: 'TE' },
-  { name: 'Amelia Clarke', role: 'Head of Communications', initials: 'AC' },
-  { name: 'Marcus Okonkwo', role: 'Head of Partnerships', initials: 'MO' },
-]
-
-const milestones = [
-  { year: '1999', event: 'Hopefield Trust founded by a group of community volunteers in London.' },
-  { year: '2003', event: 'Awarded first major government grant; expanded operations to three UK regions.' },
-  { year: '2008', event: 'Launched our flagship community resilience programme, now replicated in 40+ areas.' },
-  { year: '2013', event: 'Received the Queen\'s Award for Voluntary Service — the highest accolade for volunteers.' },
-  { year: '2018', event: 'Expanded international partnerships; launched capacity-building programmes abroad.' },
-  { year: '2024', event: 'Surpassed £12 million in total funds raised. Impact reaches 250,000+ individuals.' },
+  {
+    icon: '🤝',
+    title: 'Community',
+    description: 'We do not work for communities — we work with them. Every decision we make will be shaped by listening to the people we serve.',
+  },
 ]
 
 export default function About() {
@@ -50,47 +31,60 @@ export default function About() {
     <>
       <PageHero
         label="About Us"
-        title="Who We Are"
-        subtitle="For over 25 years, Hopefield Trust has been dedicated to creating lasting, meaningful change in communities across the United Kingdom and beyond."
+        title="Our Story Begins Here"
+        subtitle="MTJF — Mercy to Justice — is a newly established UK charity. We have no long history to boast of. What we have is a clear purpose, genuine conviction, and the courage to begin."
       />
 
-      {/* Mission & Vision */}
+      {/* Founding Story */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <SectionHeading
-                label="Mission & Vision"
-                title="Why We Exist"
+                label="How We Started"
+                title="Why MTJF Exists"
               />
-              <div className="mt-6 space-y-6">
-                <div className="bg-blue-50 rounded-2xl p-6 border-l-4 border-navy">
-                  <h3 className="font-bold text-navy mb-2 text-sm uppercase tracking-wider">Our Mission</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    To empower individuals and strengthen communities across the UK through evidence-based
-                    programmes, direct support, and meaningful advocacy — ensuring everyone has the
-                    opportunity to thrive.
-                  </p>
-                </div>
-                <div className="bg-orange-50 rounded-2xl p-6 border-l-4 border-accent">
-                  <h3 className="font-bold text-accent mb-2 text-sm uppercase tracking-wider">Our Vision</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    A United Kingdom where every person, regardless of background or circumstance,
-                    can live with dignity, purpose, and hope.
-                  </p>
-                </div>
-              </div>
-              <p className="text-gray-600 mt-6 leading-relaxed">
-                We were founded on the belief that lasting change comes from within communities.
-                Our role is to listen, support, amplify, and connect — never to impose or dictate.
-                Twenty-five years of doing this work has only deepened that conviction.
+              <p className="text-gray-600 mt-5 mb-4 leading-relaxed">
+                MTJF was founded by a small group of individuals who share a common conviction:
+                that mercy and justice are not opposites — they belong together. We saw a need
+                for an organisation willing to act on that belief practically, not just in words.
               </p>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                We are not here because we have all the answers. We are here because we believe
+                the questions matter — and that communities deserve organisations willing to
+                sit with them, listen deeply, and act with integrity.
+              </p>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                This is day one. We do not have a long list of achievements. What we have
+                is a founding team committed to doing this properly, transparently, and for
+                the long haul — and we are asking you to believe in that alongside us.
+              </p>
+              <Link to="/get-involved" className="btn-primary">Join Us</Link>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <StatCard value="25+" label="Years of Service" icon="🏛️" />
-              <StatCard value="250K+" label="People Supported" icon="🤝" />
-              <StatCard value="40+" label="UK Communities" icon="📍" />
-              <StatCard value="2,400+" label="Volunteers" icon="🌟" />
+            <div className="space-y-4">
+              <div className="bg-blue-50 rounded-2xl p-6 border-l-4 border-navy">
+                <h3 className="font-bold text-navy mb-2 text-sm uppercase tracking-wider">Our Mission</h3>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  To serve communities across the UK with compassion, advocate for justice on
+                  behalf of those who need it, and build programmes that create meaningful,
+                  lasting change — starting from the ground up.
+                </p>
+              </div>
+              <div className="bg-orange-50 rounded-2xl p-6 border-l-4 border-accent">
+                <h3 className="font-bold text-accent mb-2 text-sm uppercase tracking-wider">Our Vision</h3>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  A United Kingdom where mercy shapes how we treat the vulnerable, and justice
+                  ensures they are never left behind — regardless of background or circumstance.
+                </p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-6 border-l-4 border-gray-300">
+                <h3 className="font-bold text-gray-600 mb-2 text-sm uppercase tracking-wider">Where We Are Now</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  We have just launched. We are in the process of registering formally with the
+                  Charity Commission, building our team, and establishing our first partnerships.
+                  This is the beginning — and we are glad you are here for it.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -101,8 +95,8 @@ export default function About() {
         <div className="container-custom">
           <SectionHeading
             label="Our Values"
-            title="What Guides Us"
-            subtitle="Our values are not aspirational — they are operational. They shape every decision, every programme, and every partnership."
+            title="What Guides Everything We Do"
+            subtitle="These are not slogans. They are the commitments we are making — to the communities we serve, and to every person who chooses to support us."
             center
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -119,90 +113,65 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Founding Team */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <SectionHeading
-            label="Our Journey"
-            title="25 Years of Impact"
-            subtitle="From a small volunteer group to a nationally recognised charity — here are the milestones that shaped who we are."
-            center
-          />
-          <div className="mt-12 relative">
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-200 hidden md:block" />
-            <div className="space-y-8">
-              {milestones.map((m, i) => (
-                <div key={m.year} className={`flex flex-col md:flex-row items-center gap-6 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 flex justify-end md:block">
-                    <div className={`max-w-sm card ${i % 2 === 0 ? 'md:ml-auto' : ''}`}>
-                      <span className="text-accent font-bold text-sm">{m.year}</span>
-                      <p className="text-gray-700 text-sm leading-relaxed mt-1">{m.event}</p>
-                    </div>
+          <div className="max-w-3xl mx-auto">
+            <SectionHeading
+              label="Our People"
+              title="The Founding Team"
+              subtitle="We are a small but passionate founding team. We come from different backgrounds but share the same belief: that this work matters and is worth doing well."
+              center
+            />
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { initials: 'FT', role: 'Founder & Chair', note: 'Setting the vision and values for MTJF from the very first day.' },
+                { initials: 'FT', role: 'Operations Lead', note: 'Building the organisational structure and day-to-day foundations.' },
+                { initials: 'FT', role: 'Community Outreach', note: 'Connecting us with the communities we are here to serve.' },
+              ].map((member, i) => (
+                <div key={i} className="text-center bg-gray-50 rounded-2xl p-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-navy to-navy-light rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold">{member.initials}</span>
                   </div>
-                  <div className="relative z-10 w-10 h-10 bg-navy rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-                    <div className="w-3 h-3 bg-accent rounded-full" />
-                  </div>
-                  <div className="flex-1 hidden md:block" />
+                  <p className="font-semibold text-navy text-sm">{member.role}</p>
+                  <p className="text-gray-500 text-xs mt-2 leading-relaxed">{member.note}</p>
                 </div>
               ))}
             </div>
+            <p className="text-center text-gray-400 text-xs mt-6">
+              We will add founder names and photos here once we are ready to share them publicly.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <SectionHeading
-            label="Our People"
-            title="Leadership Team"
-            subtitle="Experienced, passionate, and committed. Our leadership team brings decades of combined expertise in the charity sector."
-            center
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
-            {team.map(member => (
-              <div key={member.name} className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-navy to-navy-light rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:shadow-lg transition-shadow duration-200">
-                  <span className="text-white font-bold text-lg">{member.initials}</span>
-                </div>
-                <h4 className="font-semibold text-navy text-sm">{member.name}</h4>
-                <p className="text-gray-500 text-xs mt-0.5">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Governance */}
+      {/* Transparency commitment */}
       <section className="section-padding bg-navy">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <SectionHeading
-              label="Governance"
-              title="Accountable to You"
-              subtitle="We hold ourselves to the highest standards of charity governance. All our legal and financial documents are publicly available."
+              label="Our Commitment"
+              title="Radical Transparency from Day One"
+              subtitle="We are committed to being fully open about who we are, where money goes, and what we achieve — from the very beginning."
               center
               light
             />
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
               {[
-                { label: 'Charity Commission\nRegistered', no: 'Reg. No. 1234567' },
-                { label: 'Companies House\nRegistered', no: 'Co. No. 09876543' },
-                { label: 'ICO Data Protection\nRegistered', no: 'ZA123456' },
+                { icon: '📋', title: 'Charity Registration', desc: 'We are working through our formal Charity Commission registration. We will publish our registration number as soon as it is confirmed.' },
+                { icon: '📊', title: 'Financial Reporting', desc: 'We will publish full accounts as required by law — and we aim to go further with accessible, plain-English financial summaries.' },
+                { icon: '📣', title: 'Impact Updates', desc: 'As our work develops, we will share honest updates — including what went well and what we are still figuring out.' },
               ].map(item => (
-                <div key={item.label} className="bg-white/10 rounded-2xl p-5 text-center">
-                  <div className="text-white font-semibold text-sm whitespace-pre-line">{item.label}</div>
-                  <div className="text-white/60 text-xs mt-1">{item.no}</div>
+                <div key={item.title} className="bg-white/10 rounded-2xl p-5 text-left">
+                  <div className="text-2xl mb-3">{item.icon}</div>
+                  <div className="text-white font-semibold text-sm mb-2">{item.title}</div>
+                  <div className="text-white/60 text-xs leading-relaxed">{item.desc}</div>
                 </div>
               ))}
             </div>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/contact" className="btn-outline-white">
-                Request Annual Report
-              </Link>
-              <Link to="/donate" className="btn-accent">
-                Support Our Work
-              </Link>
+              <Link to="/contact" className="btn-outline-white">Get in Touch</Link>
+              <Link to="/donate" className="btn-accent">Support Our Launch</Link>
             </div>
           </div>
         </div>

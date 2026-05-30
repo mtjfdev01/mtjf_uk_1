@@ -32,17 +32,15 @@ export default function Navbar() {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
+
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-navy rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-bold text-sm tracking-tight">MJ</span>
             </div>
             <div>
-              <span className="text-navy font-bold text-lg leading-none block">Hopefield</span>
-              <span className="text-gray-500 text-xs font-medium tracking-widest uppercase leading-none">Trust</span>
+              <span className="text-navy font-bold text-base leading-none block">Mercy to Justice</span>
+              <span className="text-gray-400 text-xs font-medium tracking-widest uppercase leading-none">MTJF · UK Charity</span>
             </div>
           </Link>
 
@@ -112,10 +110,7 @@ export default function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <Link
-              to="/donate"
-              className="btn-accent text-sm mt-2 text-center"
-            >
+            <Link to="/donate" className="btn-accent text-sm mt-2 text-center">
               Donate Now
             </Link>
           </div>

@@ -3,75 +3,61 @@ import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
 import NewsletterSection from '../components/NewsletterSection'
 
-const programmes = [
+const plannedAreas = [
   {
-    title: 'Community Resilience Programme',
-    tag: 'Flagship',
-    tagColor: 'bg-accent text-white',
-    description: 'Our longest-running initiative, the Community Resilience Programme works with neighbourhoods across England and Wales to build the social infrastructure that allows communities to adapt, recover, and thrive in the face of challenges. Since 2008, we\'ve worked in over 40 areas, training local leaders and establishing community hubs.',
-    stats: [
-      { value: '40+', label: 'Communities' },
-      { value: '1,200+', label: 'Leaders Trained' },
-      { value: '18', label: 'Years Running' },
-    ],
-    gradient: 'from-navy to-navy-light',
-  },
-  {
-    title: 'Early Intervention Initiative',
-    tag: 'Preventative',
-    tagColor: 'bg-green-100 text-green-700',
-    description: 'Prevention is always better than cure. This programme identifies risk early and provides wrap-around support to individuals and families before situations become crises. Working in partnership with local authorities, NHS trusts, and schools, we\'ve helped thousands of people navigate difficult periods and emerge stronger.',
-    stats: [
-      { value: '8,500+', label: 'People Supported' },
-      { value: '92%', label: 'Positive Outcomes' },
-      { value: '14', label: 'Partnerships' },
-    ],
-    gradient: 'from-green-700 to-green-500',
-  },
-  {
-    title: 'Skills & Futures Programme',
-    tag: 'Empowerment',
-    tagColor: 'bg-purple-100 text-purple-700',
-    description: 'Unlocking potential through skills, confidence, and opportunity. This programme provides tailored support to help individuals develop vocational skills, access employment, and build financial resilience. We work with local employers to create direct pathways to meaningful work.',
-    stats: [
-      { value: '3,200+', label: 'Participants' },
-      { value: '78%', label: 'Into Employment' },
-      { value: '6', label: 'UK Regions' },
-    ],
-    gradient: 'from-purple-700 to-purple-500',
-  },
-  {
-    title: 'International Partnerships',
-    tag: 'Global',
+    icon: '🌱',
+    title: 'Community Resilience',
+    tag: 'Planned',
     tagColor: 'bg-blue-100 text-blue-700',
-    description: 'The approaches we\'ve refined in UK communities have global relevance. We work alongside partner organisations in several countries to share knowledge, transfer models, and build local capacity — always led by local partners, never imposed from outside.',
-    stats: [
-      { value: '8', label: 'Countries' },
-      { value: '22', label: 'Partner Orgs' },
-      { value: '50K+', label: 'Beneficiaries' },
-    ],
-    gradient: 'from-blue-700 to-blue-500',
-  },
-]
-
-const caseStudies = [
-  {
-    location: 'Manchester',
-    title: 'Rebuilding Community Ties in Moss Side',
-    excerpt: 'After years of underinvestment, our team worked with residents to establish a community hub that now serves 400+ people each week. Local volunteers now run the centre independently.',
+    description: 'We plan to work with local neighbourhoods to help build the kind of social connections and mutual support networks that allow communities to face challenges together — not alone. Our approach will always begin with listening.',
     gradient: 'from-navy to-navy-light',
   },
   {
-    location: 'Cardiff',
-    title: 'Skills for Life in South Wales',
-    excerpt: 'A partnership with local employers created a tailored skills pathway that has helped over 200 long-term unemployed individuals find sustainable work in the past two years.',
+    icon: '⚖️',
+    title: 'Justice & Advocacy',
+    tag: 'Planned',
+    tagColor: 'bg-orange-100 text-orange-700',
+    description: 'We will stand alongside individuals and communities who face systemic unfairness — raising their concerns with decision-makers, helping them navigate complex systems, and advocating for change at a structural level.',
+    gradient: 'from-orange-600 to-amber-500',
+  },
+  {
+    icon: '🤲',
+    title: 'Direct Community Support',
+    tag: 'Planned',
+    tagColor: 'bg-green-100 text-green-700',
+    description: 'Beyond advocacy, we believe in getting practical. We are developing plans to deliver direct support to individuals and families in need — the exact shape of this will be informed by community consultations we are planning.',
     gradient: 'from-green-700 to-teal-600',
   },
   {
-    location: 'Birmingham',
-    title: 'Early Support Saves Lives in Balsall Heath',
-    excerpt: 'Our early intervention model, applied in one of the UK\'s most diverse urban communities, led to a 35% reduction in crisis referrals within 18 months of launch.',
+    icon: '📚',
+    title: 'Awareness & Education',
+    tag: 'Planned',
+    tagColor: 'bg-purple-100 text-purple-700',
+    description: 'Change starts with understanding. We aim to run awareness campaigns, publish educational resources, and create opportunities for communities, schools, and organisations to engage meaningfully with the issues we work on.',
     gradient: 'from-purple-700 to-indigo-600',
+  },
+]
+
+const approach = [
+  {
+    step: '01',
+    title: 'Listen First',
+    desc: 'Before we design any programme or initiative, we will sit with communities and listen — genuinely. Community insight will shape everything.',
+  },
+  {
+    step: '02',
+    title: 'Co-Design Together',
+    desc: 'We will design our responses with the people we are trying to serve, not for them. Their lived experience is the most valuable input we can have.',
+  },
+  {
+    step: '03',
+    title: 'Start Small, Do it Well',
+    desc: 'We are not trying to do everything at once. We would rather do one thing excellently than many things poorly. We will scale what works.',
+  },
+  {
+    step: '04',
+    title: 'Be Honest About Progress',
+    desc: 'We will share what we learn — including what does not go as planned. Honest reporting builds trust, and trust is the foundation of all good charity work.',
   },
 ]
 
@@ -80,48 +66,56 @@ export default function OurWork() {
     <>
       <PageHero
         label="Our Work"
-        title="What We Do & How"
-        subtitle="Our programmes are evidence-based, community-led, and designed for lasting impact. Explore how we're making a difference across the UK and beyond."
+        title="What We're Building"
+        subtitle="We are a new organisation. We do not yet have programmes to report on — but we have a clear plan for what we will build, and we want to share it with you openly."
       />
 
-      {/* Programmes */}
+      {/* Honest context */}
+      <section className="bg-amber-50 border-b border-amber-100 py-8">
+        <div className="container-custom">
+          <div className="flex items-start gap-4 max-w-3xl mx-auto">
+            <span className="text-2xl flex-shrink-0">📌</span>
+            <div>
+              <p className="font-semibold text-amber-900 mb-1">A Note on Where We Are</p>
+              <p className="text-amber-800 text-sm leading-relaxed">
+                MTJF has just launched. The programmes below are what we are <em>planning and working towards</em> — not
+                yet operational. We are sharing our plans publicly so that you can see what your support is building.
+                We will update this page as things develop.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Planned Areas */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <SectionHeading
-            label="Programmes"
-            title="Our Core Programmes"
-            subtitle="Each programme is carefully designed based on evidence of what works, adapted for local context, and continuously evaluated for impact."
+            label="Our Plans"
+            title="Areas We're Working Towards"
+            subtitle="These are the areas we intend to focus on. Your donations and support are what will allow us to turn these plans into reality."
             center
           />
-          <div className="mt-12 space-y-12">
-            {programmes.map((prog, i) => (
+          <div className="mt-12 space-y-16">
+            {plannedAreas.map((area, i) => (
               <div
-                key={prog.title}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
+                key={area.title}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${i % 2 !== 0 ? '' : ''}`}
               >
                 <div className={i % 2 !== 0 ? 'order-1 lg:order-2' : ''}>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${prog.tagColor}`}>{prog.tag}</span>
+                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${area.tagColor}`}>
+                      {area.tag}
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy mb-4">{prog.title}</h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">{prog.description}</p>
-                  <div className="grid grid-cols-3 gap-4">
-                    {prog.stats.map(stat => (
-                      <div key={stat.label} className="text-center bg-gray-50 rounded-xl p-4">
-                        <div className="text-2xl font-bold text-navy">{stat.value}</div>
-                        <div className="text-xs text-gray-500 mt-0.5">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
+                  <h3 className="text-2xl font-bold text-navy mb-4">{area.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{area.description}</p>
                 </div>
                 <div className={i % 2 !== 0 ? 'order-2 lg:order-1' : ''}>
-                  <div className={`aspect-video bg-gradient-to-br ${prog.gradient} rounded-2xl flex items-center justify-center`}>
-                    <div className="text-white/30 text-center">
-                      <svg className="w-16 h-16 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <p className="text-sm">{prog.title}</p>
+                  <div className={`aspect-video bg-gradient-to-br ${area.gradient} rounded-2xl flex items-center justify-center`}>
+                    <div className="text-center">
+                      <div className="text-6xl mb-3">{area.icon}</div>
+                      <p className="text-white/50 text-sm">{area.title}</p>
                     </div>
                   </div>
                 </div>
@@ -131,56 +125,19 @@ export default function OurWork() {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <SectionHeading
-            label="Case Studies"
-            title="Stories of Change"
-            subtitle="Real places, real people, real impact. Each story represents hundreds more across the UK."
-            center
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {caseStudies.map(cs => (
-              <div key={cs.title} className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-200 group">
-                <div className={`h-40 bg-gradient-to-br ${cs.gradient} flex items-center justify-center`}>
-                  <span className="text-white/40 text-sm">📍 {cs.location}</span>
-                </div>
-                <div className="p-6">
-                  <span className="text-xs font-semibold text-accent uppercase tracking-wider">{cs.location}</span>
-                  <h3 className="font-bold text-navy mt-1 mb-3 group-hover:text-navy-light transition-colors">{cs.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{cs.excerpt}</p>
-                  <button className="mt-4 text-navy font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all duration-200">
-                    Read More
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Approach */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <SectionHeading
               label="Our Approach"
-              title="How We Work"
-              subtitle="Our model is built on four interconnected pillars that together create sustainable, community-owned change."
+              title="How We Will Work"
+              subtitle="We are committed to doing this the right way, even if it takes longer. Here are the principles that will guide everything we do."
               center
             />
             <div className="mt-12 space-y-6">
-              {[
-                { step: '01', title: 'Listen & Learn', desc: 'We begin by genuinely listening. Community needs assessments, resident consultations, and data analysis shape every programme we design.' },
-                { step: '02', title: 'Co-Design', desc: 'Programmes are co-designed with community members, not for them. Local knowledge is as important as academic evidence.' },
-                { step: '03', title: 'Implement & Support', desc: 'Our frontline teams work alongside communities, providing the resources, training, and support needed to deliver meaningful change.' },
-                { step: '04', title: 'Evaluate & Share', desc: 'Rigorous evaluation tells us what works. We publish our findings openly so the whole sector can learn and improve.' },
-              ].map(item => (
-                <div key={item.step} className="flex gap-6 items-start">
+              {approach.map(item => (
+                <div key={item.step} className="flex gap-6 items-start bg-white rounded-2xl p-6 shadow-sm">
                   <div className="w-14 h-14 bg-navy rounded-2xl flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-sm">{item.step}</span>
                   </div>
@@ -195,17 +152,54 @@ export default function OurWork() {
         </div>
       </section>
 
+      {/* What's Happening Now */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <SectionHeading
+            label="Right Now"
+            title="What We're Doing Today"
+            subtitle="Since we are in our first days, here is an honest look at where our energy is currently going."
+            center
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 max-w-4xl mx-auto">
+            {[
+              {
+                icon: '📋',
+                title: 'Setting Up',
+                desc: 'We are completing our formal Charity Commission registration, putting governance structures in place, and ensuring we operate properly from day one.',
+              },
+              {
+                icon: '🔊',
+                title: 'Listening',
+                desc: 'We are in conversations with communities, local organisations, and potential partners to understand needs and identify where we can make the most meaningful difference.',
+              },
+              {
+                icon: '🤝',
+                title: 'Building Relationships',
+                desc: 'We are connecting with other charities, local authorities, and community leaders. We believe in collaboration — not duplication.',
+              },
+            ].map(item => (
+              <div key={item.title} className="bg-gray-50 rounded-2xl p-6 text-center">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="font-bold text-navy mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="section-padding bg-accent/5 border-y border-accent/10">
+      <section className="section-padding bg-navy">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold text-navy mb-4">Help Us Do More</h2>
-          <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-            Every programme you've read about was made possible by supporters like you.
-            Your donation funds the next community we reach.
+          <h2 className="text-3xl font-bold text-white mb-4">Help Us Get These Plans Off the Ground</h2>
+          <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            Everything on this page is a plan — and plans need people and resources to become reality.
+            Your support at this stage is more valuable than you know.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/donate" className="btn-accent">Donate Now</Link>
-            <Link to="/get-involved" className="btn-primary">Get Involved</Link>
+            <Link to="/donate" className="btn-accent">Support Our Work</Link>
+            <Link to="/get-involved" className="btn-outline-white">Volunteer With Us</Link>
           </div>
         </div>
       </section>

@@ -5,59 +5,40 @@ import NewsletterSection from '../components/NewsletterSection'
 
 const departments = [
   { label: 'General Enquiry', value: 'general' },
-  { label: 'Donations & Fundraising', value: 'donations' },
   { label: 'Volunteering', value: 'volunteering' },
-  { label: 'Corporate Partnerships', value: 'corporate' },
+  { label: 'Donations & Fundraising', value: 'donations' },
+  { label: 'Partnerships', value: 'partnerships' },
   { label: 'Media & Press', value: 'press' },
-  { label: 'Complaints', value: 'complaints' },
-]
-
-const officeInfo = [
-  {
-    icon: '🏢',
-    title: 'Registered Office',
-    lines: ['Hopefield House', '14 Charity Lane', 'London', 'EC1A 1AA'],
-  },
-  {
-    icon: '📞',
-    title: 'Phone',
-    lines: ['0300 123 4567', 'Mon–Fri, 9am–5pm'],
-  },
-  {
-    icon: '✉️',
-    title: 'Email',
-    lines: ['info@hopefieldtrust.org.uk', 'We respond within 2 working days'],
-  },
+  { label: 'Feedback or Suggestions', value: 'feedback' },
 ]
 
 const faqs = [
   {
-    q: 'How can I find out how my donation is being used?',
-    a: 'We publish detailed annual reports and impact updates. Monthly donors receive a quarterly impact email. You can also request a printed impact report by contacting us.',
+    q: 'You have just launched — are you a registered charity yet?',
+    a: 'We are currently going through the Charity Commission registration process. We are operating as an unincorporated organisation in the meantime and will publish our registration number as soon as it is confirmed. We are committed to full legal compliance and transparency throughout.',
   },
   {
-    q: 'Can I donate in memory of someone?',
-    a: 'Yes — we welcome tribute donations and can provide a personalised acknowledgement letter for families. Please contact our fundraising team for assistance.',
+    q: 'Where will my donation actually go right now?',
+    a: 'At this stage, donations directly fund our setup costs — charity registration fees, essential operations, outreach materials, and the groundwork for our first programmes. We will publish a clear breakdown of all expenditure once we are formally registered.',
   },
   {
-    q: 'How do I cancel a regular donation?',
-    a: 'You can cancel anytime by contacting us via phone or email with your donor reference number. We will process your request within 5 working days.',
+    q: 'Can I volunteer even though you have only just started?',
+    a: 'Absolutely — in fact, this is the best time to get involved. As a founding volunteer, you will help shape who we are and what we do. We are actively welcoming expressions of interest across a wide range of skills and time commitments.',
   },
   {
-    q: 'I want to leave a gift in my will. Who should I speak to?',
-    a: 'Legacies are one of the most impactful ways to support our work. Please contact our legacy team at legacies@hopefieldtrust.org.uk for a confidential conversation.',
+    q: 'How can I stay updated on MTJF\'s progress?',
+    a: 'The best way is to sign up for our newsletter at the bottom of this page. We will send honest, regular updates — including what we are working on, challenges we face, and milestones we reach.',
   },
 ]
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', subject: '', department: '', message: '',
+    name: '', email: '', subject: '', department: '', message: '',
   })
   const [submitted, setSubmitted] = useState(false)
   const [openFaq, setOpenFaq] = useState(null)
 
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value })
-
   const handleSubmit = e => {
     e.preventDefault()
     setSubmitted(true)
@@ -66,16 +47,32 @@ export default function Contact() {
   return (
     <>
       <PageHero
-        label="Contact Us"
-        title="Get in Touch"
-        subtitle="We'd love to hear from you. Whether you have a question, a partnership idea, or just want to learn more — our team is here to help."
+        label="Contact"
+        title="Talk to Us"
+        subtitle="We are a small founding team and we read every message personally. We do not have a call centre — just real people who care. Get in touch."
       />
 
-      {/* Contact Info */}
+      {/* Contact info cards */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {officeInfo.map(item => (
+            {[
+              {
+                icon: '✉️',
+                title: 'Email Us',
+                lines: ['info@mtjf.org.uk', 'We aim to reply within 2 working days'],
+              },
+              {
+                icon: '📍',
+                title: 'Based In',
+                lines: ['United Kingdom', 'We operate nationally'],
+              },
+              {
+                icon: '🕐',
+                title: 'Response Time',
+                lines: ['Within 2 working days', 'Mon–Fri, best efforts'],
+              },
+            ].map(item => (
               <div key={item.title} className="card text-center hover:shadow-lg transition-shadow duration-200">
                 <div className="text-4xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-navy mb-2">{item.title}</h3>
@@ -87,21 +84,21 @@ export default function Contact() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Form */}
             <div>
               <SectionHeading
-                label="Send a Message"
-                title="Write to Us"
-                subtitle="Fill in the form and we'll respond within 2 working days."
+                label="Message Us"
+                title="Send a Message"
+                subtitle="Whether you want to volunteer, partner, donate, or simply learn more — we would love to hear from you."
               />
               <div className="mt-8">
                 {submitted ? (
                   <div className="card text-center py-10 shadow-md">
                     <div className="text-5xl mb-4">✅</div>
                     <h3 className="text-xl font-bold text-navy mb-2">Message Received!</h3>
-                    <p className="text-gray-600">
-                      Thank you for reaching out, <strong>{formData.name}</strong>.
-                      We'll reply to <strong>{formData.email}</strong> within 2 working days.
+                    <p className="text-gray-600 leading-relaxed">
+                      Thank you, <strong>{formData.name}</strong>. A real member of our team
+                      will reply to <strong>{formData.email}</strong> personally within 2 working days.
                     </p>
                   </div>
                 ) : (
@@ -109,42 +106,35 @@ export default function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="label">Full Name *</label>
-                        <input type="text" name="name" required value={formData.name} onChange={handleChange} className="input-field" placeholder="Jane Smith" />
+                        <input type="text" name="name" required value={formData.name} onChange={handleChange} className="input-field" placeholder="Your name" />
                       </div>
                       <div>
                         <label className="label">Email Address *</label>
-                        <input type="email" name="email" required value={formData.email} onChange={handleChange} className="input-field" placeholder="jane@example.com" />
+                        <input type="email" name="email" required value={formData.email} onChange={handleChange} className="input-field" placeholder="you@example.com" />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="label">Phone (optional)</label>
-                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="input-field" placeholder="+44 7700 900000" />
-                      </div>
-                      <div>
-                        <label className="label">Department *</label>
-                        <select name="department" required value={formData.department} onChange={handleChange} className="input-field">
-                          <option value="">Select department</option>
-                          {departments.map(d => (
-                            <option key={d.value} value={d.value}>{d.label}</option>
-                          ))}
-                        </select>
-                      </div>
+                    <div>
+                      <label className="label">What is this about? *</label>
+                      <select name="department" required value={formData.department} onChange={handleChange} className="input-field">
+                        <option value="">Please select</option>
+                        {departments.map(d => (
+                          <option key={d.value} value={d.value}>{d.label}</option>
+                        ))}
+                      </select>
                     </div>
                     <div>
                       <label className="label">Subject *</label>
-                      <input type="text" name="subject" required value={formData.subject} onChange={handleChange} className="input-field" placeholder="How can we help?" />
+                      <input type="text" name="subject" required value={formData.subject} onChange={handleChange} className="input-field" placeholder="Brief subject line" />
                     </div>
                     <div>
-                      <label className="label">Message *</label>
-                      <textarea name="message" required value={formData.message} onChange={handleChange} rows={5} className="input-field resize-none" placeholder="Tell us more..." />
+                      <label className="label">Your Message *</label>
+                      <textarea name="message" required value={formData.message} onChange={handleChange} rows={5} className="input-field resize-none" placeholder="Tell us whatever is on your mind..." />
                     </div>
                     <button type="submit" className="btn-primary w-full py-4">
                       Send Message
                     </button>
                     <p className="text-xs text-gray-400">
-                      Your data will be held securely in line with our Privacy Policy and GDPR obligations.
-                      We will not share your information with third parties.
+                      Your data will be held securely and never shared. We comply with UK GDPR.
                     </p>
                   </form>
                 )}
@@ -155,7 +145,7 @@ export default function Contact() {
             <div>
               <SectionHeading
                 label="FAQ"
-                title="Frequently Asked Questions"
+                title="Common Questions"
               />
               <div className="mt-8 space-y-3">
                 {faqs.map((faq, i) => (
@@ -181,34 +171,17 @@ export default function Contact() {
                 ))}
               </div>
 
-              {/* Media enquiries */}
+              {/* Note */}
               <div className="mt-8 bg-navy rounded-2xl p-6 text-white">
-                <h3 className="font-bold mb-2">Media Enquiries</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-4">
-                  For press enquiries, interview requests, or access to our spokespeople and experts,
-                  please contact our communications team directly.
+                <h3 className="font-bold mb-2">A Note From Our Team</h3>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  We are a small, newly formed team. We do not have a switchboard or a large
+                  communications department. But we do read every message, and we will reply to
+                  every genuine enquiry. We appreciate your patience as we build.
                 </p>
-                <div className="text-sm text-white/90">
-                  <p>📧 press@hopefieldtrust.org.uk</p>
-                  <p className="mt-1">📞 0300 123 4568 (media line)</p>
-                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Map placeholder */}
-      <section className="bg-gray-100 h-72 flex items-center justify-center">
-        <div className="text-center text-gray-400">
-          <svg className="w-16 h-16 mx-auto mb-3 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1}
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <p className="text-sm font-medium">Interactive Map</p>
-          <p className="text-xs mt-1">Replace with Google Maps embed or Mapbox integration</p>
-          <p className="text-xs text-gray-400 mt-1">Hopefield House, 14 Charity Lane, London EC1A 1AA</p>
         </div>
       </section>
 

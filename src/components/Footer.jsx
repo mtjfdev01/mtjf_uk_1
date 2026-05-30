@@ -11,16 +11,16 @@ const footerLinks = {
   'Support Us': [
     { label: 'Donate', to: '/donate' },
     { label: 'Volunteer', to: '/get-involved' },
-    { label: 'Corporate Partnerships', to: '/get-involved' },
     { label: 'Fundraise for Us', to: '/get-involved' },
-    { label: 'Leave a Legacy', to: '/get-involved' },
+    { label: 'Corporate Support', to: '/get-involved' },
+    { label: 'Spread the Word', to: '/get-involved' },
   ],
-  'Legal': [
+  'Organisation': [
     { label: 'Privacy Policy', to: '#' },
     { label: 'Cookie Policy', to: '#' },
     { label: 'Terms of Use', to: '#' },
-    { label: 'Complaints Policy', to: '#' },
-    { label: 'Safeguarding', to: '#' },
+    { label: 'Safeguarding Policy', to: '#' },
+    { label: 'Complaints', to: '/contact' },
   ],
 }
 
@@ -29,23 +29,24 @@ export default function Footer() {
     <footer className="bg-navy text-white">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+            <Link to="/" className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-sm tracking-tight">MJ</span>
               </div>
               <div>
-                <span className="text-white font-bold text-lg leading-none block">Hopefield Trust</span>
-                <span className="text-white/60 text-xs tracking-widest uppercase">UK Registered Charity</span>
+                <span className="text-white font-bold text-base leading-none block">Mercy to Justice</span>
+                <span className="text-white/50 text-xs tracking-widest uppercase">MTJF · UK Charity</span>
               </div>
             </Link>
-            <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-sm">
-              Working tirelessly to build stronger, more resilient communities across the United Kingdom and beyond.
-              Registered Charity No. 1234567 (England &amp; Wales).
+            <p className="text-white/65 text-sm leading-relaxed mb-2 max-w-sm">
+              We are a newly established UK charity, just beginning our journey to serve communities
+              and advocate for justice. We are grateful for every supporter who joins us from day one.
+            </p>
+            <p className="text-white/40 text-xs mb-6">
+              UK Registered Charity (registration in progress)
             </p>
 
             {/* Social links */}
@@ -72,7 +73,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       to={link.to}
-                      className="text-white/65 hover:text-white text-sm transition-colors duration-200"
+                      className="text-white/60 hover:text-white text-sm transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -87,19 +88,13 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/50 text-xs text-center sm:text-left">
-            &copy; {new Date().getFullYear()} Hopefield Trust. All rights reserved.
-            Registered in England &amp; Wales. Charity No. 1234567.
+          <p className="text-white/40 text-xs text-center sm:text-left">
+            &copy; {new Date().getFullYear()} Mercy to Justice (MTJF). All rights reserved.
+            Based in the United Kingdom.
           </p>
-          <div className="flex items-center gap-2">
-            <img
-              src="https://www.charitycommission.gov.uk/media/1155971/logo.png"
-              alt="Charity Commission Registered"
-              className="h-6 opacity-60"
-              onError={e => { e.target.style.display = 'none' }}
-            />
-            <span className="text-white/40 text-xs">Fundraising Regulator Member</span>
-          </div>
+          <p className="text-white/30 text-xs">
+            Built with purpose. Driven by compassion.
+          </p>
         </div>
       </div>
     </footer>
