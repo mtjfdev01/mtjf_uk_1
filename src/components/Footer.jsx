@@ -42,8 +42,8 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-white/65 text-sm leading-relaxed mb-2 max-w-sm">
-              We are a newly established UK charity, just beginning our journey to serve communities
-              and advocate for justice. We are grateful for every supporter who joins us from day one.
+              A UK-based charity working to support communities, promote fairness,
+              and advocate for those who need it most.
             </p>
             <p className="text-white/40 text-xs mb-6">
               UK Registered Charity (registration in progress)
@@ -93,7 +93,7 @@ export default function Footer() {
             Based in the United Kingdom.
           </p>
           <p className="text-white/30 text-xs">
-            Built with purpose. Driven by compassion.
+            MTJF — Mercy to Justice
           </p>
         </div>
       </div>
